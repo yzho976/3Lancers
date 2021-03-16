@@ -47,8 +47,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const outdated = {
-  color: 'red',
-};
+    color: "red"
+}
 
 const DashboardTodo = () => {
   const listitems = [
