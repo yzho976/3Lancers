@@ -81,7 +81,8 @@ const DashboardTodo = () => {
   const classes = useStyles();
   const [item, setItem] = useState('');
   const [dueDate, setDueDate] = useState('2021-01-01');
-  const [newItem, setNewItem] = useState(listitems);
+  const [itemList, setItemList] = useState(listitems);
+  const [newItem, setNewItem] = useState(itemList);
   const [anchorEl, setAnchorEl] = useState(null);
   const [cancel, setCancel] = useState([0]);
   const [reDate, setReDate] = useState('');
@@ -166,7 +167,8 @@ const DashboardTodo = () => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleOptionClose = () => {
+  const handleOptionClose = (event) => {
+    console.log(event);
     setAnchorEl(null);
   };
 
@@ -227,7 +229,7 @@ const DashboardTodo = () => {
               role={undefined}
               dense
               button
-              onClick={handleToggle(value.name)}
+              onClick={handleToggle(value)}
             >
               {value.onGoing ? (
                 <ListItemIcon>
@@ -283,7 +285,25 @@ const DashboardTodo = () => {
                     aria-haspopup="true"
                     onClick={handleOption(value)}
                   >
-                    <MoreVertIcon />
+                    <BlockIcon />
+                  </IconButton>
+                  <IconButton
+                    edge="end"
+                    aria-label="delete"
+                    aria-controls="simple-menu"
+                    aria-haspopup="true"
+                    onClick={deleteevent(value.name)}
+                  >
+                    <DeleteIcon />
+                  </IconButton>
+                  <IconButton
+                    edge="end"
+                    aria-label="schedule"
+                    aria-controls="simple-menu"
+                    aria-haspopup="true"
+                    onClick={handleOption(value.name)}
+                  >
+                    <ScheduleIcon />
                   </IconButton>
                 </ListItemSecondaryAction>
               ) : (
@@ -296,6 +316,24 @@ const DashboardTodo = () => {
                     onClick={handleOption(value)}
                   >
                     <ErrorIcon className={dashboardStyles.outdated} />
+                  </IconButton>
+                  <IconButton
+                    edge="end"
+                    aria-label="delete"
+                    aria-controls="simple-menu"
+                    aria-haspopup="true"
+                    onClick={deleteevent(value.name)}
+                  >
+                    <DeleteIcon className="outdated" />
+                  </IconButton>
+                  <IconButton
+                    edge="end"
+                    aria-label="schedule"
+                    aria-controls="simple-menu"
+                    aria-haspopup="true"
+                    onClick={handleOption(value.name)}
+                  >
+                    <ScheduleIcon className="outdated" />
                   </IconButton>
                 </ListItemSecondaryAction>
               )}
