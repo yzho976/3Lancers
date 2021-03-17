@@ -168,7 +168,6 @@ const DashboardTodo = () => {
   };
 
   const handleOptionClose = (event) => {
-    console.log(event);
     setAnchorEl(null);
   };
 
