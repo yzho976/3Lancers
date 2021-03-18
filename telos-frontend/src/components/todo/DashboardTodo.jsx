@@ -1,4 +1,3 @@
-/* eslint-disable react/no-this-in-sfc */
 /* eslint-disable guard-for-in */
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable prefer-const */
@@ -56,6 +55,7 @@ const outdated = {
 };
 
 const DashboardTodo = () => {
+
   let listitems = [
     {
       name: 'OnGoing',
