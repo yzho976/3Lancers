@@ -300,9 +300,9 @@ const DashboardTodo = () => {
                     aria-label="schedule"
                     aria-controls="simple-menu"
                     aria-haspopup="true"
-                    onClick={handleOption(value.name)}
+                    onClick={handleOption(value)}
                   >
-                    <ScheduleIcon />
+                    <MoreVertIcon />
                   </IconButton>
                 </ListItemSecondaryAction>
               ) : (
@@ -330,9 +330,9 @@ const DashboardTodo = () => {
                     aria-label="schedule"
                     aria-controls="simple-menu"
                     aria-haspopup="true"
-                    onClick={handleOption(value.name)}
+                    onClick={handleOption(value)}
                   >
-                    <ScheduleIcon className="outdated" />
+                    <ErrorIcon className="outdated" />
                   </IconButton>
                 </ListItemSecondaryAction>
               )}
