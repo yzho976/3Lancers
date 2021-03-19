@@ -81,8 +81,7 @@ const DashboardTodo = () => {
   const classes = useStyles();
   const [item, setItem] = useState('');
   const [dueDate, setDueDate] = useState('2021-01-01');
-  const [itemList, setItemList] = useState(listitems);
-  const [newItem, setNewItem] = useState(itemList);
+  const [newItem, setNewItem] = useState(listitems);
   const [anchorEl, setAnchorEl] = useState(null);
   const [cancel, setCancel] = useState([0]);
   const [reDate, setReDate] = useState('');
@@ -228,7 +227,7 @@ const DashboardTodo = () => {
               role={undefined}
               dense
               button
-              onClick={handleToggle(value)}
+              onClick={handleToggle(value.name)}
             >
               {value.onGoing ? (
                 <ListItemIcon>
