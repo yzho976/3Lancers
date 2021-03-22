@@ -1,10 +1,7 @@
 const mongoose = require('mongoose');
 
 const textSchema = new mongoose.Schema({
-  text: {
-    type: String,
-    required: true,
-  },
+  text: String,
   // foreign-key to widget model
   widgetId: {
     type: mongoose.SchemaTypes.ObjectId,
@@ -13,4 +10,4 @@ const textSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('TextEvent', textSchema);
+module.exports = mongoose.model('Text', textSchema);
